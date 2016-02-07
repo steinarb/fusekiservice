@@ -56,6 +56,11 @@
          <type>war</type>
          <outputDirectory>${project.build.directory}/../webapp</outputDirectory>
         </artifactItem>
+        <artifactItem>
+         <groupId>org.codehaus.izpack</groupId>
+         <artifactId>izpack-utils</artifactId>
+         <version>5.0.0-rc1</version>
+        </artifactItem>
        </artifactItems>
       </configuration>
      </execution>
