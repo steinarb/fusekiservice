@@ -61,6 +61,22 @@
      </execution>
     </executions>
    </plugin>
+   <plugin>
+    <!-- to be run with "mvn windows-service-installer:installer" -->
+    <groupId>com.alexkasko.installer</groupId>
+    <artifactId>maven-windows-service-installer-plugin</artifactId>
+    <version>1.0.6</version>
+    <dependencies>
+     <dependency>
+      <groupId>com.alexkasko.installer</groupId>
+      <artifactId>windows-service-installer-common</artifactId>
+      <version>1.0.6</version>
+     </dependency>
+    </dependencies>
+    <configuration>
+     <prunsrvDaemonLauncherClass>no.priv.bang.fuseki.fusekiservice.FusekiService</prunsrvDaemonLauncherClass>
+    </configuration>
+   </plugin>
   </plugins>
  </build>
 </project>
