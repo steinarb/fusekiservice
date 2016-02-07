@@ -27,7 +27,7 @@ public class FusekiService implements DaemonLauncher {
     }
 
     public void stopDaemon() {
-        JettyFuseki.instance.join();
+        JettyFuseki.instance.stop();
     }
 
 }
