@@ -54,7 +54,7 @@
          <artifactId>jena-fuseki-war</artifactId>
          <version>${jena-fuseki-version}</version>
          <type>war</type>
-         <outputDirectory>${project.build.directory}/../webapp</outputDirectory>
+         <outputDirectory>${project.build.directory}/webapp</outputDirectory>
         </artifactItem>
         <artifactItem>
          <groupId>org.codehaus.izpack</groupId>
@@ -80,6 +80,14 @@
     </dependencies>
     <configuration>
      <prunsrvDaemonLauncherClass>no.priv.bang.fuseki.fusekiservice.FusekiService</prunsrvDaemonLauncherClass>
+    </configuration>
+   </plugin>
+   <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>2.19.1</version>
+    <configuration>
+     <workingDirectory>${project.build.directory}</workingDirectory>
     </configuration>
    </plugin>
   </plugins>
