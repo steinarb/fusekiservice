@@ -1,0 +1,33 @@
+* What's this?
+
+This is an attempt at creating an installer for [[https://jena.apache.org/documentation/fuseki2][Apache Jena Fuseki]] that will install Jena Fuseki as a windows service.
+
+This git repository contains an [[https://maven.apache.org][Apache Maven]] POM file, that uses the [[https://github.com/alexkasko/windows-service-installer][maven-windows-service-installer-plugin]] to create the installer.
+
+To build the installer, the following software is required:
+ 1. A Java Development Kit
+ 2. Apache maven
+ 3. git
+
+The steps to build the installer , is:
+ 1. Check out the repository
+    : git checkout https://github.com/steinarb/fusekiservice.git
+ 2. Build the repository with maven
+    : cd fusekiservice
+    : mvn clean install
+ 3. Build the installer
+    : mvn windows-service-installer:installer
+
+To use the installer:
+ 1. copy the target/fusekiservice-0.0.1-SNAPSHOT-installer.zip file to the computer the service should be installed on
+ 2. Unpack the fusekiservice-0.0.1-SNAPSHOT-installer.zip file
+ 3. Open the fusekiservice-0.0.1-SNAPSHOT-installer directory in Windows Explorer
+ 4. Right-click the install.exe file and select "Run as administrator"
+ 5. In the dialog "User Account Control"
+    1. Click the button "OK"
+ 6. In the "Installation of FusekiService" dialog:
+    1. Click the button "Next>"
+    2. Click the button "Next>"
+    3. Click the button "Next>"
+    4. Click the button "Next>"
+    5. Click the button "Done"
