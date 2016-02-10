@@ -80,6 +80,9 @@
     </dependencies>
     <configuration>
      <prunsrvDaemonLauncherClass>no.priv.bang.fuseki.fusekiservice.FusekiService</prunsrvDaemonLauncherClass>
+     <appDataDirs>
+      <appDataDir>${project.build.directory}/webapp</appDataDir>
+     </appDataDirs>
      <prunsrvServiceName>FusekiService</prunsrvServiceName>
      <prunsrvDisplayName>Jena Fuseki Server Service</prunsrvDisplayName>
      <prunsrvDescription>This service starts an Apache Jena Fuseki Server, listening for HTTP on port 4000</prunsrvDescription>
