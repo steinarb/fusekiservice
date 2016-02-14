@@ -86,6 +86,7 @@
      <prunsrvServiceName>FusekiService</prunsrvServiceName>
      <prunsrvDisplayName>Jena Fuseki Server Service</prunsrvDisplayName>
      <prunsrvDescription>This service starts an Apache Jena Fuseki Server, listening for HTTP on port 4000</prunsrvDescription>
+     <use64BitJre>true</use64BitJre>
     </configuration>
    </plugin>
    <plugin>
