@@ -4,6 +4,7 @@ This is an attempt at creating an installer for [[https://jena.apache.org/docume
 
 This git repository contains an [[https://maven.apache.org][Apache Maven]] POM file, that uses the [[https://github.com/alexkasko/windows-service-installer][maven-windows-service-installer-plugin]] to create the installer.
 
+** Creating an installer
 To build the installer, the following software is required:
  1. A Java Development Kit
  2. Apache maven
@@ -18,16 +19,37 @@ The steps to build the installer , is:
  3. Build the installer
     : mvn windows-service-installer:installer
 
+** Using the installer to install the windows service
 To use the installer:
  1. copy the target/fusekiservice-0.0.1-SNAPSHOT-installer.zip file to the computer the service should be installed on
  2. Unpack the fusekiservice-0.0.1-SNAPSHOT-installer.zip file
  3. Open the fusekiservice-0.0.1-SNAPSHOT-installer directory in Windows Explorer
  4. Right-click the install.exe file and select "Run as administrator"
  5. In the dialog "User Account Control"
-    1. Click the button "OK"
+    1. Click the button "Yes"
  6. In the "Installation of FusekiService" dialog:
     1. Click the button "Next>"
     2. Click the button "Next>"
-    3. Click the button "Next>"
+    3. In the dialog "Message"
+       1. Click on the button "OK"
     4. Click the button "Next>"
-    5. Click the button "Done"
+    5. Click the button "Next>"
+    6. Click the button "Done"
+
+A Jena Fuseki windows service will be installed, the service will be started and starts listening on port 4000.
+
+** Uninstalling the windows service
+
+To remove the installed service:
+ 1. Open a windows explorer on:
+    : %USERPROFILE%\fusekiservice\uninstall
+ 2. Right-click the "uninstall.exe" file and select "Run as administrator"
+ 3. In the dialog "User Account Control"
+    1. Click the button "Yes"
+ 4. In the "IzPack - Uninstaller" dialog:
+    1. Checkmark the checkbox "Force the deletion of..."
+    2. Click the button "Uninstall"
+    3. Click the button "Quit"
+
+After the uninstaller has completed, most of the installation directory will be gone (the exception is the top level directory, and the directories "jre", "logs" and "uninstall").
+
