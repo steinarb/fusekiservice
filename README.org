@@ -16,8 +16,6 @@ The steps to build the installer , is:
  2. Build the repository with maven
     : cd fusekiservice
     : mvn clean install
- 3. Build the installer
-    : mvn windows-service-installer:installer
 
 ** Using the installer to install the windows service
 To use the installer:
