@@ -142,6 +142,15 @@
      <prunsrvDescription>This service starts an Apache Jena Fuseki Server, listening for HTTP on port 4000</prunsrvDescription>
      <use64BitJre>true</use64BitJre>
     </configuration>
+    <executions>
+     <execution>
+      <id>build-installer</id>
+      <phase>package</phase>
+      <goals>
+       <goal>installer</goal>
+      </goals>
+     </execution>
+    </executions>
    </plugin>
    <plugin>
     <groupId>org.apache.maven.plugins</groupId>
