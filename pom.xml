@@ -165,19 +165,6 @@
   	<pluginExecution>
   	 <pluginExecutionFilter>
   	  <groupId>org.apache.maven.plugins</groupId>
-  	  <artifactId>maven-dependency-plugin</artifactId>
-  	  <versionRange>[2.10,)</versionRange>
-  	  <goals>
-  	   <goal>unpack</goal>
-  	  </goals>
-  	 </pluginExecutionFilter>
-  	 <action>
-  	  <ignore></ignore>
-  	 </action>
-  	</pluginExecution>
-  	<pluginExecution>
-  	 <pluginExecutionFilter>
-  	  <groupId>org.apache.maven.plugins</groupId>
   	  <artifactId>maven-install-plugin</artifactId>
   	  <versionRange>[2.5.2,)</versionRange>
   	  <goals>
