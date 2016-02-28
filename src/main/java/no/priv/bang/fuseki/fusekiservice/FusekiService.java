@@ -19,6 +19,7 @@ public class FusekiService implements DaemonLauncher {
 
     public void startDaemon() {
         JenaSystem.init();
+        FusekiEnv.mode = FusekiEnv.INIT.STANDALONE;
         FusekiEnv.setEnvironment();
         Fuseki.init();
         Log.info(getClass(), "FUSEKI_HOME: " + FusekiEnv.FUSEKI_HOME);
