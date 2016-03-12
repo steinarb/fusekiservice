@@ -54,8 +54,8 @@ public class FusekiService implements DaemonLauncher {
 
     private JettyServerConfig createJettyConfig(Properties properties) {
         JettyServerConfig jettyConfig = new JettyServerConfig();
-        jettyConfig.port = Integer.parseInt(properties.getProperty("port", "4000"));
-        jettyConfig.contextPath = properties.getProperty("contextpath", "/");
+        jettyConfig.port = Integer.parseInt(properties.getProperty("jena.fuseki.port", "3030"));
+        jettyConfig.contextPath = properties.getProperty("jena.fuseki.contextpath", "/");
         jettyConfig.jettyConfigFile = null;
         jettyConfig.pages = Fuseki.PagesStatic;
         jettyConfig.enableCompression = true;
