@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import org.apache.jena.atlas.logging.Log;
 import org.apache.jena.fuseki.Fuseki;
 import org.apache.jena.fuseki.jetty.JettyFuseki;
 import org.apache.jena.fuseki.jetty.JettyServerConfig;
@@ -15,15 +14,20 @@ import org.apache.jena.system.JenaSystem;
 import com.alexkasko.installer.DaemonLauncher;
 
 public class FusekiService implements DaemonLauncher {
-    private String propertiesFilename = "jenafusekiservice.properties";
+    private Properties properties;
 
-    public void startDaemon() {
+    public FusekiService() {
+        super();
         JenaSystem.init();
         FusekiEnv.mode = FusekiEnv.INIT.STANDALONE;
         FusekiEnv.setEnvironment();
         Fuseki.init();
-        Log.info(getClass(), "FUSEKI_HOME: " + FusekiEnv.FUSEKI_HOME);
-        Properties properties = findAndReadProperties();
+        properties = findAndReadProperties();
+    }
+
+    private String propertiesFilename = "jenafusekiservice.properties";
+
+    public void startDaemon() {
         JettyServerConfig jettyConfig = createJettyConfig(properties);
         JettyFuseki.initializeServer(jettyConfig);
         JettyFuseki.instance.start();
