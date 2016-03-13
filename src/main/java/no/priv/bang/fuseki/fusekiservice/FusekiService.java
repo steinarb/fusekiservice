@@ -3,6 +3,7 @@ package no.priv.bang.fuseki.fusekiservice;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.file.Paths;
 import java.util.Properties;
 
 import org.apache.jena.fuseki.Fuseki;
@@ -19,10 +20,14 @@ public class FusekiService implements DaemonLauncher {
     public FusekiService() {
         super();
         JenaSystem.init();
+        properties = findAndReadProperties();
+        String fusekiDataLocation = properties.getProperty("jena.fuseki.datalocation");
+        if (fusekiDataLocation != null) {
+            FusekiEnv.FUSEKI_BASE = Paths.get(fusekiDataLocation);
+        }
         FusekiEnv.mode = FusekiEnv.INIT.STANDALONE;
         FusekiEnv.setEnvironment();
         Fuseki.init();
-        properties = findAndReadProperties();
     }
 
     private String propertiesFilename = "jenafusekiservice.properties";
