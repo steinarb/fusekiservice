@@ -37,7 +37,7 @@ public class FusekiServiceTest {
     public void test() throws InterruptedException {
         FusekiService endpoint = new FusekiService();
     	int linenumberOfLogLineWithPortNumber = 7;
-        rootLogger.addAppender(mockAppender);
+        rootLogger.addAppender(mockAppender); // Appender must be added here because Jena init in the FusekiService constructor clears the appender list
         endpoint.startDaemon();
         verify(mockAppender, times(linenumberOfLogLineWithPortNumber)).doAppend(captorLoggingEvent.capture());
         List<LoggingEvent> allLogEventsSoFar = captorLoggingEvent.getAllValues();
