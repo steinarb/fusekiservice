@@ -146,6 +146,7 @@
      <appDataDirs>
       <appDataDir>${project.build.directory}/webapp</appDataDir>
      </appDataDirs>
+     <izpackDefaultInstallDir>$APPLICATIONS_DEFAULT_ROOT\Apache\Jena\FusekiService</izpackDefaultInstallDir>
      <prunsrvServiceName>FusekiService</prunsrvServiceName>
      <prunsrvDisplayName>Jena Fuseki Server Service</prunsrvDisplayName>
      <prunsrvDescription>This service starts an Apache Jena Fuseki Server, listening for HTTP on port 4000</prunsrvDescription>
