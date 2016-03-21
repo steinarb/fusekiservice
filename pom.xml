@@ -22,6 +22,11 @@
    <version>1.0.7-SNAPSHOT</version>
   </dependency>
   <dependency>
+   <groupId>org.codehaus.izpack</groupId>
+   <artifactId>izpack-native</artifactId>
+   <version>5.0.7</version>
+  </dependency>
+  <dependency>
    <groupId>org.apache.jena</groupId>
    <artifactId>jena-fuseki-core</artifactId>
    <version>${jena-fuseki-version}</version>
@@ -64,24 +69,6 @@
          <version>${jena-fuseki-version}</version>
          <type>war</type>
          <outputDirectory>${project.build.directory}/webapp</outputDirectory>
-        </artifactItem>
-       </artifactItems>
-      </configuration>
-     </execution>
-     <execution>
-      <!-- Unpack the izpack-native jar, so that the COIOSHelper_x64.dll can be installed locally as an artifact -->
-      <id>unpack-izpack-native</id>
-      <phase>initialize</phase>
-      <goals>
-       <goal>unpack</goal>
-      </goals>
-      <configuration>
-       <artifactItems>
-        <artifactItem>
-         <groupId>org.codehaus.izpack</groupId>
-         <artifactId>izpack-native</artifactId>
-         <version>5.0.6</version>
-         <outputDirectory>${project.build.directory}/classes</outputDirectory>
         </artifactItem>
        </artifactItems>
       </configuration>
