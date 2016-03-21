@@ -81,51 +81,10 @@
          <groupId>org.codehaus.izpack</groupId>
          <artifactId>izpack-native</artifactId>
          <version>5.0.6</version>
+         <outputDirectory>${project.build.directory}/classes</outputDirectory>
         </artifactItem>
        </artifactItems>
       </configuration>
-     </execution>
-     <execution>
-      <!-- Download the COIOSHelper_x64.dll to where iZpack can use it -->
-      <id>copy-dlls</id>
-      <phase>process-resources</phase>
-      <goals>
-       <goal>copy</goal>
-      </goals>
-      <configuration>
-       <artifactItems>
-        <artifactItem>
-         <groupId>org.codehaus.izpack.native</groupId>
-         <artifactId>COIOSHelper_x64</artifactId>
-         <version>5.0.6</version>
-         <type>dll</type>
-         <outputDirectory>${project.build.directory}/izpack/3rdparty</outputDirectory>
-        </artifactItem>
-       </artifactItems>
-       <stripVersion>true</stripVersion>
-      </configuration>
-     </execution>
-    </executions>
-   </plugin>
-   <plugin>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-install-plugin</artifactId>
-    <version>2.5.2</version>
-    <executions>
-     <execution>
-      <!-- Install the COIOSHelper_x64.dll as an artifact in maven -->
-      <id>install-coioshelper-x64-dll</id>
-      <phase>generate-sources</phase>
-      <configuration>
-       <file>${project.build.directory}/dependency/com/izforge/izpack/bin/native/3rdparty/COIOSHelper_x64.dll</file>
-       <groupId>org.codehaus.izpack.native</groupId>
-       <artifactId>COIOSHelper_x64</artifactId>
-       <version>5.0.6</version>
-       <packaging>dll</packaging>
-      </configuration>
-      <goals>
-       <goal>install-file</goal>
-      </goals>
      </execution>
     </executions>
    </plugin>
