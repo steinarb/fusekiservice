@@ -79,12 +79,12 @@
     <!-- to be run with "mvn windows-service-installer:installer" -->
     <groupId>com.alexkasko.installer</groupId>
     <artifactId>maven-windows-service-installer-plugin</artifactId>
-    <version>1.0.6</version>
+    <version>1.0.7-SNAPSHOT</version>
     <dependencies>
      <dependency>
       <groupId>com.alexkasko.installer</groupId>
       <artifactId>windows-service-installer-common</artifactId>
-      <version>1.0.6</version>
+      <version>1.0.7-SNAPSHOT</version>
      </dependency>
     </dependencies>
     <configuration>
