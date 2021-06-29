@@ -34,7 +34,7 @@ public class FusekiServiceTest {
         endpoint.startDaemon();
         verify(mockAppender, times(linenumberOfLogLineWithPortNumber)).doAppend(captorLoggingEvent.capture());
         List<LoggingEvent> allLogEventsSoFar = captorLoggingEvent.getAllValues();
-        assertThat(allLogEventsSoFar.get(linenumberOfLogLineWithDataDirectory - 1).getRenderedMessage()).endsWith("target\\test");
+        assertThat(allLogEventsSoFar.get(linenumberOfLogLineWithDataDirectory - 1).getRenderedMessage()).endsWith("test");
         assertThat(allLogEventsSoFar.get(linenumberOfLogLineWithPortNumber - 1).getRenderedMessage()).endsWith("port 3030");
         Thread.sleep(10000);
         endpoint.stopDaemon();
